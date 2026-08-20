@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Counter Pengerjaan Rumah</title>
+    <title>Progress Pengerjaan Rumah</title>
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,9 +12,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
 
     <style>
+        /* =========================================================
+           RESET
+        ========================================================= */
         * {
             margin: 0;
             padding: 0;
@@ -22,181 +28,259 @@
         }
 
         :root {
-            --primary: #0b63ce;
-            --primary-dark: #064b9e;
+            --primary: #0875e1;
+            --primary-dark: #034b9d;
+            --primary-darker: #033e82;
             --primary-light: #eaf4ff;
             --primary-soft: #f5f9ff;
-            --text: #142033;
-            --muted: #7c8ba1;
+
+            --text: #17283f;
+            --text-soft: #52647d;
+            --muted: #8391a5;
+
             --white: #ffffff;
-            --border: #e5edf8;
+            --border: #e2ebf6;
+
+            --success: #148756;
+            --success-bg: #eaf9f1;
+
+            --danger: #ca4b4b;
+            --danger-bg: #fff0f0;
+
+            --warning: #936c19;
+            --warning-bg: #fff8e7;
+        }
+
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
         }
 
         body {
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 30px 16px;
-            font-family: "Inter", sans-serif;
+
+            padding: 40px 20px;
+
+            font-family: "Inter", Arial, sans-serif;
+
+            color: var(--text);
 
             background:
                 radial-gradient(
-                    circle at 10% 10%,
-                    rgba(76, 155, 255, 0.18),
-                    transparent 30%
+                    circle at 8% 8%,
+                    rgba(65, 145, 240, 0.17),
+                    transparent 28%
                 ),
                 radial-gradient(
-                    circle at 90% 90%,
-                    rgba(12, 99, 206, 0.12),
-                    transparent 35%
+                    circle at 92% 92%,
+                    rgba(7, 102, 211, 0.12),
+                    transparent 32%
                 ),
                 #f3f8ff;
-
-            color: var(--text);
         }
 
-        .counter-card {
+
+        /* =========================================================
+           CARD UTAMA
+        ========================================================= */
+        .construction-counter {
             width: 100%;
-            max-width: 720px;
+            max-width: 680px;
+
             overflow: hidden;
-            background: rgba(255, 255, 255, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.9);
-            border-radius: 28px;
+
+            border-radius: 30px;
+
+            background: var(--white);
+
+            border: 1px solid rgba(216, 229, 245, 0.9);
 
             box-shadow:
-                0 25px 70px rgba(18, 83, 150, 0.12),
-                0 4px 16px rgba(18, 83, 150, 0.05);
+                0 30px 80px rgba(19, 77, 141, 0.13),
+                0 8px 25px rgba(19, 77, 141, 0.05);
         }
 
-        /* HEADER */
-        .header {
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+        .counter-header {
             position: relative;
-            padding: 38px 35px 80px;
+
+            min-height: 325px;
+
+            padding: 45px 35px 100px;
+
             text-align: center;
-            color: white;
+
+            color: var(--white);
 
             background:
                 linear-gradient(
                     135deg,
-                    #0876e8 0%,
-                    #075fc2 45%,
-                    #03448e 100%
+                    #0878e8 0%,
+                    #0766ca 42%,
+                    #034994 100%
                 );
 
             overflow: hidden;
         }
 
-        .header::before {
+        .counter-header::before {
             content: "";
+
             position: absolute;
-            width: 250px;
-            height: 250px;
-            top: -140px;
-            right: -100px;
-            background: rgba(255,255,255,0.08);
+
+            width: 300px;
+            height: 300px;
+
+            top: -185px;
+            right: -115px;
+
             border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.09);
         }
 
-        .header::after {
+        .counter-header::after {
             content: "";
+
             position: absolute;
-            width: 180px;
-            height: 180px;
-            bottom: -120px;
-            left: -80px;
-            background: rgba(255,255,255,0.06);
+
+            width: 230px;
+            height: 230px;
+
+            left: -140px;
+            bottom: -135px;
+
             border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.065);
         }
 
-        .house-icon {
+        .header-content {
             position: relative;
             z-index: 2;
+        }
 
-            width: 64px;
-            height: 64px;
 
-            margin: 0 auto 18px;
+        /* Icon Rumah */
+        .home-icon {
+            width: 74px;
+            height: 74px;
+
+            margin: 0 auto 22px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 20px;
+            border-radius: 22px;
 
-            background: rgba(255, 255, 255, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 32px;
 
-            backdrop-filter: blur(10px);
+            color: var(--white);
+
+            background: rgba(255, 255, 255, 0.13);
+
+            border: 1px solid rgba(255, 255, 255, 0.21);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(7px);
         }
 
-        .house-icon i {
-            font-size: 30px;
-            color: white;
-        }
 
-        .small-title {
-            position: relative;
-            z-index: 2;
+        /* Small Header */
+        .header-label {
+            margin-bottom: 9px;
 
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
-            letter-spacing: 2.4px;
+
+            letter-spacing: 3px;
 
             text-transform: uppercase;
-            color: rgba(255,255,255,.75);
 
-            margin-bottom: 9px;
+            color: rgba(255, 255, 255, 0.72);
         }
 
-        .header h1 {
-            position: relative;
-            z-index: 2;
 
-            font-size: 30px;
+        /* Judul */
+        .counter-header h1 {
+            margin-bottom: 11px;
+
+            font-size: 34px;
+            line-height: 1.2;
+
             font-weight: 800;
-            letter-spacing: -0.8px;
 
-            margin-bottom: 9px;
+            letter-spacing: -1px;
         }
 
+
+        /* Tanggal Mulai */
         .start-date {
-            position: relative;
-            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 8px;
 
             font-size: 13px;
-            color: rgba(255,255,255,.77);
+            font-weight: 500;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 7px;
+            color: rgba(255, 255, 255, 0.80);
         }
 
-        /* CONTENT */
-        .content {
+        .start-date i {
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           CONTENT
+        ========================================================= */
+        .counter-content {
             position: relative;
-            margin-top: -50px;
-            padding: 0 30px 35px;
+
+            margin-top: -75px;
+
+            padding: 0 38px 38px;
+
+            z-index: 3;
         }
 
-        /* MAIN COUNTER */
+
+        /* =========================================================
+           COUNTER HARI UTAMA
+        ========================================================= */
         .main-counter {
             position: relative;
 
-            max-width: 500px;
+            max-width: 560px;
 
-            margin: 0 auto 25px;
-            padding: 30px 20px 25px;
+            margin: 0 auto 30px;
+
+            padding: 33px 25px 28px;
 
             text-align: center;
-            background: white;
 
-            border-radius: 24px;
+            border-radius: 26px;
+
+            background: var(--white);
+
             border: 1px solid var(--border);
 
             box-shadow:
-                0 15px 40px rgba(28, 82, 140, 0.12);
+                0 18px 45px rgba(22, 75, 132, 0.11);
         }
 
         .main-counter::before {
@@ -204,60 +288,81 @@
 
             position: absolute;
 
-            width: 54px;
-            height: 4px;
-
             top: 0;
             left: 50%;
 
+            width: 70px;
+            height: 5px;
+
             transform: translateX(-50%);
 
-            border-radius: 0 0 5px 5px;
+            border-radius: 0 0 10px 10px;
 
-            background: linear-gradient(
-                90deg,
-                #63b5ff,
-                #086acb
-            );
+            background:
+                linear-gradient(
+                    90deg,
+                    #6fc0ff,
+                    #1985eb
+                );
         }
 
-        .counter-number {
-            font-size: 92px;
-            line-height: 1;
-            font-weight: 800;
-            letter-spacing: -5px;
 
-            background: linear-gradient(
-                135deg,
-                #0878e9,
-                #054895
-            );
+        /* Angka Besar */
+        .workday-number {
+            font-size: 96px;
+            line-height: 1;
+
+            font-weight: 800;
+
+            letter-spacing: -6px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #1181ee,
+                    #0453a8
+                );
 
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+
             background-clip: text;
+
+            margin-bottom: 15px;
         }
 
-        .counter-title {
-            margin-top: 10px;
 
-            font-size: 17px;
-            font-weight: 700;
-            color: #253954;
-
+        /* Hari Pengerjaan */
+        .workday-title {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 7px;
+
+            gap: 8px;
+
+            font-size: 18px;
+            font-weight: 700;
+
+            color: #253a57;
         }
 
-        .counter-title i {
+        .workday-title i {
+            font-size: 17px;
             color: var(--primary);
-            font-size: 15px;
         }
 
-        .duration-small {
-            margin-top: 8px;
+
+        /* Durasi Kecil */
+        .duration {
+            margin-top: 9px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
 
             font-size: 12px;
             font-weight: 500;
@@ -265,118 +370,169 @@
             color: var(--muted);
         }
 
-        .duration-small strong {
-            color: var(--primary);
-            font-weight: 700;
+        .duration-prefix {
+            margin-right: 2px;
+
+            color: #9aa7b7;
         }
 
-        /* STAT */
-        .stats {
+        .duration strong {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .duration-dot {
+            margin: 0 3px;
+
+            font-size: 7px;
+
+            color: #9ab2ce;
+        }
+
+
+        /* =========================================================
+           STATISTIK
+        ========================================================= */
+        .statistics {
             display: grid;
+
             grid-template-columns: repeat(3, 1fr);
-            gap: 13px;
+
+            gap: 14px;
         }
 
         .stat-card {
-            position: relative;
-
-            padding: 20px 12px;
+            padding: 22px 12px 21px;
 
             text-align: center;
 
-            border-radius: 18px;
+            border-radius: 20px;
 
-            background: var(--primary-soft);
-            border: 1px solid #e2edfa;
+            background:
+                linear-gradient(
+                    180deg,
+                    #f8fbff,
+                    #f2f7fd
+                );
+
+            border: 1px solid #deebfa;
 
             transition:
-                transform .2s ease,
-                box-shadow .2s ease;
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
         }
 
         .stat-card:hover {
             transform: translateY(-3px);
 
             box-shadow:
-                0 10px 25px rgba(32, 93, 155, 0.08);
+                0 12px 25px rgba(18, 79, 145, 0.08);
         }
 
-        .stat-icon {
-            width: 38px;
-            height: 38px;
 
-            margin: 0 auto 10px;
+        /* Icon statistik */
+        .stat-icon {
+            width: 43px;
+            height: 43px;
+
+            margin: 0 auto 12px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            background: #e3f1ff;
+            border-radius: 13px;
 
-            border-radius: 11px;
+            color: #0875db;
 
-            color: var(--primary);
+            background: #e4f2ff;
         }
 
         .stat-icon i {
-            font-size: 18px;
+            font-size: 19px;
         }
 
-        .stat-value {
+
+        /* Angka statistik */
+        .stat-number {
             display: block;
 
-            font-size: 24px;
+            margin-bottom: 5px;
+
+            font-size: 25px;
             font-weight: 800;
 
-            color: #105dab;
-
-            margin-bottom: 5px;
+            color: #0759ac;
         }
 
+
+        /* Judul statistik */
         .stat-label {
+            display: block;
+
             font-size: 11px;
+            font-weight: 500;
+
+            line-height: 1.4;
+
+            color: #7c8ca2;
+        }
+
+
+        /* =========================================================
+           FOOTER INFO
+        ========================================================= */
+        .counter-footer {
+            margin-top: 30px;
+
+            padding-top: 23px;
+
+            text-align: center;
+
+            border-top: 1px solid #eaf0f7;
+        }
+
+
+        /* Hari Ini */
+        .today {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin-bottom: 13px;
+
+            font-size: 12px;
             font-weight: 500;
 
             color: #8290a4;
         }
 
-        /* BOTTOM */
-        .bottom-info {
-            margin-top: 25px;
-            padding-top: 22px;
-
-            border-top: 1px solid #edf1f7;
-
-            text-align: center;
-        }
-
-        .today {
-            font-size: 12px;
-            color: #8593a6;
-
-            margin-bottom: 11px;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-        }
-
         .today i {
+            font-size: 14px;
             color: var(--primary);
         }
 
         .today strong {
-            color: #53647b;
+            font-weight: 700;
+            color: #4c6079;
         }
 
+
+        /* =========================================================
+           STATUS
+        ========================================================= */
         .status {
             display: inline-flex;
-
             align-items: center;
+            justify-content: center;
+
             gap: 7px;
 
-            padding: 8px 14px;
+            padding: 8px 15px;
 
             border-radius: 100px;
 
@@ -384,449 +540,929 @@
             font-weight: 700;
         }
 
-        .working {
-            color: #148451;
-            background: #eaf9f1;
-            border: 1px solid #d5f2e3;
+        .status i {
+            font-size: 13px;
         }
 
-        .holiday {
-            color: #ce4b4b;
-            background: #fff0f0;
-            border: 1px solid #f8dddd;
+
+        /* Kerja */
+        .status-working {
+            color: var(--success);
+
+            background: var(--success-bg);
+
+            border: 1px solid #d3efdf;
         }
 
-        .before-start {
-            color: #8c6a20;
-            background: #fff8e8;
-            border: 1px solid #f6e9bf;
+
+        /* Libur */
+        .status-holiday {
+            color: var(--danger);
+
+            background: var(--danger-bg);
+
+            border: 1px solid #f4dcdc;
         }
 
+
+        /* Belum mulai */
+        .status-waiting {
+            color: var(--warning);
+
+            background: var(--warning-bg);
+
+            border: 1px solid #f2e5ba;
+        }
+
+
+        /* =========================================================
+           CATATAN
+        ========================================================= */
         .note {
-            margin-top: 18px;
+            max-width: 480px;
 
-            font-size: 10px;
-            color: #a0aabc;
-
-            line-height: 1.6;
+            margin: 18px auto 0;
 
             display: flex;
+            align-items: flex-start;
             justify-content: center;
-            align-items: center;
-            gap: 6px;
+
+            gap: 7px;
+
+            font-size: 10px;
+            line-height: 1.6;
+
+            color: #a1acbb;
         }
 
         .note i {
-            color: #87a6ca;
+            margin-top: 1px;
+
+            flex-shrink: 0;
+
+            font-size: 12px;
+
+            color: #8aa9cc;
         }
 
-        /* MOBILE */
-        @media (max-width: 600px) {
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+        @media (max-width: 650px) {
 
             body {
-                padding: 15px;
+                padding: 18px 13px;
             }
 
-            .counter-card {
-                border-radius: 23px;
+            .construction-counter {
+                border-radius: 24px;
             }
 
-            .header {
-                padding: 32px 20px 72px;
+            .counter-header {
+                min-height: 295px;
+
+                padding:
+                    35px
+                    20px
+                    90px;
             }
 
-            .header h1 {
-                font-size: 25px;
+            .home-icon {
+                width: 64px;
+                height: 64px;
+
+                border-radius: 19px;
+
+                font-size: 28px;
+
+                margin-bottom: 18px;
             }
 
-            .content {
-                padding: 0 16px 25px;
+            .header-label {
+                font-size: 10px;
+
+                letter-spacing: 2.4px;
+            }
+
+            .counter-header h1 {
+                font-size: 27px;
+            }
+
+            .start-date {
+                font-size: 11px;
+            }
+
+            .counter-content {
+                margin-top: -65px;
+
+                padding:
+                    0
+                    16px
+                    28px;
             }
 
             .main-counter {
-                padding: 28px 15px 23px;
+                padding:
+                    29px
+                    15px
+                    25px;
+
+                margin-bottom: 22px;
+
+                border-radius: 22px;
             }
 
-            .counter-number {
-                font-size: 75px;
+            .workday-number {
+                font-size: 78px;
+
+                letter-spacing: -5px;
             }
 
-            .stats {
-                grid-template-columns: repeat(3, 1fr);
+            .workday-title {
+                font-size: 16px;
+            }
+
+            .duration {
+                font-size: 11px;
+            }
+
+            .statistics {
                 gap: 8px;
             }
 
             .stat-card {
-                padding: 17px 6px;
+                padding:
+                    18px
+                    5px;
+
+                border-radius: 16px;
             }
 
-            .stat-value {
-                font-size: 20px;
+            .stat-icon {
+                width: 36px;
+                height: 36px;
+
+                margin-bottom: 10px;
+
+                border-radius: 11px;
+            }
+
+            .stat-icon i {
+                font-size: 16px;
+            }
+
+            .stat-number {
+                font-size: 21px;
             }
 
             .stat-label {
                 font-size: 9px;
             }
 
-            .stat-icon {
-                width: 34px;
-                height: 34px;
+            .counter-footer {
+                margin-top: 23px;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE KECIL
+        ========================================================= */
+        @media (max-width: 390px) {
+
+            .statistics {
+                grid-template-columns: 1fr;
             }
 
-            .stat-icon i {
-                font-size: 16px;
+            .stat-card {
+                display: grid;
+
+                grid-template-columns:
+                    40px
+                    auto;
+
+                grid-template-rows:
+                    auto
+                    auto;
+
+                column-gap: 12px;
+
+                align-items: center;
+
+                text-align: left;
+
+                padding: 14px 16px;
+            }
+
+            .stat-icon {
+                grid-column: 1;
+                grid-row: 1 / 3;
+
+                margin: 0;
+            }
+
+            .stat-number {
+                grid-column: 2;
+                grid-row: 1;
+
+                margin: 0;
+
+                font-size: 20px;
+            }
+
+            .stat-label {
+                grid-column: 2;
+                grid-row: 2;
+
+                font-size: 10px;
             }
         }
 
     </style>
 </head>
 
+
 <body>
 
-<div class="counter-card">
+    <main class="construction-counter">
 
-    <!-- HEADER -->
-    <div class="header">
+        <!-- =====================================================
+             HEADER
+        ====================================================== -->
+        <header class="counter-header">
 
-        <div class="house-icon">
-            <i class="bi bi-house-door-fill"></i>
-        </div>
+            <div class="header-content">
 
-        <div class="small-title">
-            Progress Pembangunan
-        </div>
-
-        <h1>
-            Pengerjaan Rumah
-        </h1>
-
-        <div class="start-date">
-            <i class="bi bi-calendar-check"></i>
-            <span>Dimulai Senin, 13 April 2026</span>
-        </div>
-
-    </div>
-
-
-    <!-- CONTENT -->
-    <div class="content">
-
-        <!-- COUNTER -->
-        <div class="main-counter">
-
-            <div
-                class="counter-number"
-                id="workDay"
-            >
-                0
-            </div>
-
-            <div class="counter-title">
-                <i class="bi bi-hammer"></i>
-                Hari Pengerjaan
-            </div>
-
-            <div
-                class="duration-small"
-                id="workDuration"
-            >
-                0 bulan • 0 minggu • 0 hari
-            </div>
-
-        </div>
-
-
-        <!-- STATISTIK -->
-        <div class="stats">
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-calendar3"></i>
+                <div class="home-icon">
+                    <i class="bi bi-house-door-fill"></i>
                 </div>
 
-                <span
-                    class="stat-value"
-                    id="calendarDays"
-                >
-                    0
-                </span>
-
-                <span class="stat-label">
-                    Hari Kalender
-                </span>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-calendar-x"></i>
+                <div class="header-label">
+                    Progress Pembangunan
                 </div>
 
-                <span
-                    class="stat-value"
-                    id="sundayCount"
-                >
-                    0
-                </span>
+                <h1>
+                    Pengerjaan Rumah
+                </h1>
 
-                <span class="stat-label">
-                    Minggu / Libur
-                </span>
+                <div class="start-date">
 
-            </div>
+                    <i class="bi bi-calendar-check"></i>
 
+                    <span>
+                        Dimulai Senin, 13 April 2026
+                    </span>
 
-            <div class="stat-card">
-
-                <div class="stat-icon">
-                    <i class="bi bi-calendar-week"></i>
                 </div>
 
-                <span
-                    class="stat-value"
-                    id="weekCount"
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             CONTENT
+        ====================================================== -->
+        <section class="counter-content">
+
+
+            <!-- =================================================
+                 COUNTER UTAMA
+            ================================================== -->
+            <div class="main-counter">
+
+                <div
+                    class="workday-number"
+                    id="workDay"
                 >
                     0
-                </span>
+                </div>
 
-                <span class="stat-label">
-                    Minggu Berjalan
-                </span>
+
+                <div class="workday-title">
+
+                    <i class="bi bi-hammer"></i>
+
+                    <span>
+                        Hari Pengerjaan
+                    </span>
+
+                </div>
+
+
+                <!-- DURASI BULAN / MINGGU / HARI -->
+                <div
+                    class="duration"
+                    id="workDuration"
+                >
+                    <span class="duration-prefix">
+                        ≈
+                    </span>
+
+                    <strong>0</strong> bulan
+
+                    <span class="duration-dot">
+                        <i class="bi bi-circle-fill"></i>
+                    </span>
+
+                    <strong>0</strong> minggu
+
+                    <span class="duration-dot">
+                        <i class="bi bi-circle-fill"></i>
+                    </span>
+
+                    <strong>0</strong> hari
+                </div>
 
             </div>
 
-        </div>
 
 
-        <!-- BOTTOM -->
-        <div class="bottom-info">
+            <!-- =================================================
+                 STATISTIK
+            ================================================== -->
+            <div class="statistics">
 
-            <div
-                class="today"
-                id="today"
-            ></div>
 
-            <div id="status"></div>
+                <!-- HARI KALENDER -->
+                <div class="stat-card">
 
-            <div class="note">
-                <i class="bi bi-info-circle"></i>
-                <span>
-                    Hari kerja dihitung Senin–Sabtu. Hari Minggu tidak termasuk hari pengerjaan.
-                </span>
+                    <div class="stat-icon">
+                        <i class="bi bi-calendar3"></i>
+                    </div>
+
+                    <span
+                        class="stat-number"
+                        id="calendarDays"
+                    >
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Hari Kalender
+                    </span>
+
+                </div>
+
+
+
+                <!-- HARI MINGGU -->
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-calendar-x"></i>
+                    </div>
+
+                    <span
+                        class="stat-number"
+                        id="sundayCount"
+                    >
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Minggu / Libur
+                    </span>
+
+                </div>
+
+
+
+                <!-- MINGGU BERJALAN -->
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-calendar-week"></i>
+                    </div>
+
+                    <span
+                        class="stat-number"
+                        id="weekCount"
+                    >
+                        0
+                    </span>
+
+                    <span class="stat-label">
+                        Minggu Berjalan
+                    </span>
+
+                </div>
+
             </div>
 
-        </div>
-
-    </div>
-
-</div>
 
 
-<script>
-
-    // Senin, 13 April 2026
-    const startDate = new Date(2026, 3, 13);
-
-    const today = new Date();
-
-    startDate.setHours(0, 0, 0, 0);
-    today.setHours(0, 0, 0, 0);
+            <!-- =================================================
+                 FOOTER
+            ================================================== -->
+            <div class="counter-footer">
 
 
-    // ================================
-    // HITUNG HARI
-    // ================================
+                <!-- HARI INI -->
+                <div
+                    class="today"
+                    id="today"
+                >
+                    <i class="bi bi-clock"></i>
 
-    let workDays = 0;
-    let sundayCount = 0;
-    let calendarDays = 0;
+                    <span>
+                        Hari ini
+                    </span>
+                </div>
 
 
-    if (today >= startDate) {
+                <!-- STATUS -->
+                <div id="status"></div>
 
-        let currentDate = new Date(startDate);
 
-        while (currentDate <= today) {
+                <!-- CATATAN -->
+                <div class="note">
 
-            calendarDays++;
+                    <i class="bi bi-info-circle"></i>
 
-            // 0 = Minggu
-            if (currentDate.getDay() === 0) {
+                    <span>
+                        Hari pengerjaan dihitung Senin sampai Sabtu.
+                        Hari Minggu merupakan hari libur dan tidak
+                        masuk dalam perhitungan hari pengerjaan.
+                    </span>
 
-                sundayCount++;
+                </div>
 
-            } else {
+            </div>
 
-                workDays++;
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+        /* =========================================================
+           KONFIGURASI TANGGAL MULAI
+        ========================================================= */
+
+        /*
+            JavaScript menggunakan index bulan:
+
+            Januari   = 0
+            Februari  = 1
+            Maret     = 2
+            April     = 3
+
+            Jadi:
+            Senin, 13 April 2026
+            = new Date(2026, 3, 13)
+        */
+
+        const startDate =
+            new Date(2026, 3, 13);
+
+
+        /*
+            Tanggal hari ini mengikuti
+            tanggal perangkat / komputer / HP.
+        */
+
+        const today =
+            new Date();
+
+
+
+        /* =========================================================
+           NORMALISASI JAM
+        ========================================================= */
+
+        /*
+            Jam dibuat 00:00:00 supaya
+            perhitungan hanya berdasarkan tanggal.
+        */
+
+        startDate.setHours(
+            0,
+            0,
+            0,
+            0
+        );
+
+        today.setHours(
+            0,
+            0,
+            0,
+            0
+        );
+
+
+
+        /* =========================================================
+           VARIABLE COUNTER
+        ========================================================= */
+
+        let workDays = 0;
+
+        let calendarDays = 0;
+
+        let sundayCount = 0;
+
+
+
+        /* =========================================================
+           HITUNG HARI
+        ========================================================= */
+
+        if (today >= startDate) {
+
+            /*
+                Copy tanggal mulai supaya
+                startDate asli tidak berubah.
+            */
+
+            const currentDate =
+                new Date(startDate);
+
+
+            /*
+                Loop dari tanggal mulai
+                sampai tanggal hari ini.
+
+                Tanggal mulai ikut dihitung.
+            */
+
+            while (
+                currentDate <= today
+            ) {
+
+                /*
+                    Semua hari masuk
+                    hari kalender.
+                */
+
+                calendarDays++;
+
+
+                /*
+                    getDay():
+
+                    0 = Minggu
+                    1 = Senin
+                    2 = Selasa
+                    3 = Rabu
+                    4 = Kamis
+                    5 = Jumat
+                    6 = Sabtu
+                */
+
+                if (
+                    currentDate.getDay() === 0
+                ) {
+
+                    /*
+                        Minggu = Libur
+                    */
+
+                    sundayCount++;
+
+                } else {
+
+                    /*
+                        Senin - Sabtu
+                        = Hari Pengerjaan
+                    */
+
+                    workDays++;
+
+                }
+
+
+                /*
+                    Lanjut ke hari berikutnya.
+                */
+
+                currentDate.setDate(
+                    currentDate.getDate() + 1
+                );
 
             }
 
-            currentDate.setDate(
-                currentDate.getDate() + 1
-            );
         }
 
-    }
 
 
-    // Minggu kalender
-    const weekCount =
-        calendarDays > 0
-            ? Math.ceil(calendarDays / 7)
-            : 0;
+        /* =========================================================
+           HITUNG MINGGU BERJALAN
+        ========================================================= */
+
+        const weekCount =
+            calendarDays > 0
+                ? Math.ceil(
+                    calendarDays / 7
+                )
+                : 0;
 
 
-    // ================================
-    // BULAN / MINGGU / HARI KERJA
-    // ================================
 
-    // 1 bulan kerja ≈ 26 hari
-    // 1 minggu kerja = 6 hari
+        /* =========================================================
+           KONVERSI HARI PENGERJAAN
+           MENJADI BULAN / MINGGU / HARI
+        ========================================================= */
 
-    let remainingWorkDays = workDays;
+        /*
+            Karena:
+            Senin - Sabtu = kerja
+            Minggu = libur
 
-    const workMonths =
-        Math.floor(remainingWorkDays / 26);
+            Maka:
 
-    remainingWorkDays =
-        remainingWorkDays % 26;
+            1 minggu kerja = 6 hari
 
-    const workWeeks =
-        Math.floor(remainingWorkDays / 6);
+            Untuk estimasi bulan kerja:
+            1 bulan ≈ 26 hari pengerjaan
+        */
 
-    const workRemainingDays =
-        remainingWorkDays % 6;
+        const WORK_DAYS_PER_MONTH = 26;
 
-
-    // ================================
-    // UPDATE
-    // ================================
-
-    document.getElementById("workDay").textContent =
-        workDays;
-
-    document.getElementById("calendarDays").textContent =
-        calendarDays;
-
-    document.getElementById("sundayCount").textContent =
-        sundayCount;
-
-    document.getElementById("weekCount").textContent =
-        weekCount;
+        const WORK_DAYS_PER_WEEK = 6;
 
 
-    // ================================
-    // DURASI
-    // ================================
-
-    let durationParts = [];
-
-    if (workMonths > 0) {
-
-        durationParts.push(
-            "<strong>" +
-            workMonths +
-            "</strong> bulan"
-        );
-
-    }
-
-    if (workWeeks > 0) {
-
-        durationParts.push(
-            "<strong>" +
-            workWeeks +
-            "</strong> minggu"
-        );
-
-    }
-
-    if (
-        workRemainingDays > 0 ||
-        durationParts.length === 0
-    ) {
-
-        durationParts.push(
-            "<strong>" +
-            workRemainingDays +
-            "</strong> hari"
-        );
-
-    }
+        let remainingDays =
+            workDays;
 
 
-    document.getElementById("workDuration").innerHTML =
-        "≈ " +
-        durationParts.join(
-            " &nbsp;•&nbsp; "
-        );
+        /*
+            BULAN
+        */
+
+        const workMonths =
+            Math.floor(
+                remainingDays /
+                WORK_DAYS_PER_MONTH
+            );
 
 
-    // ================================
-    // TANGGAL HARI INI
-    // ================================
-
-    const dateFormatter =
-        new Intl.DateTimeFormat(
-            "id-ID",
-            {
-                weekday: "long",
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-            }
-        );
+        remainingDays =
+            remainingDays %
+            WORK_DAYS_PER_MONTH;
 
 
-    document.getElementById("today").innerHTML =
-        '<i class="bi bi-clock"></i>' +
-        '<span>Hari ini • <strong>' +
-        dateFormatter.format(today) +
-        "</strong></span>";
+        /*
+            MINGGU
+        */
+
+        const workWeeks =
+            Math.floor(
+                remainingDays /
+                WORK_DAYS_PER_WEEK
+            );
 
 
-    // ================================
-    // STATUS
-    // ================================
+        /*
+            SISA HARI
+        */
 
-    const status =
-        document.getElementById("status");
+        const workRemainingDays =
+            remainingDays %
+            WORK_DAYS_PER_WEEK;
 
 
-    if (today < startDate) {
 
-        status.innerHTML =
-            '<span class="status before-start">' +
-                '<i class="bi bi-hourglass-split"></i>' +
-                ' Pengerjaan Belum Dimulai' +
-            '</span>';
+        /* =========================================================
+           UPDATE ANGKA UTAMA
+        ========================================================= */
 
-    }
+        document
+            .getElementById("workDay")
+            .textContent =
+            workDays;
 
-    else if (today.getDay() === 0) {
 
-        status.innerHTML =
-            '<span class="status holiday">' +
-                '<i class="bi bi-calendar-x"></i>' +
-                ' Hari Libur • Minggu' +
-            '</span>';
 
-    }
+        document
+            .getElementById("calendarDays")
+            .textContent =
+            calendarDays;
 
-    else {
 
-        status.innerHTML =
-            '<span class="status working">' +
-                '<i class="bi bi-check-circle-fill"></i>' +
-                ' Hari Pengerjaan' +
-            '</span>';
 
-    }
+        document
+            .getElementById("sundayCount")
+            .textContent =
+            sundayCount;
 
-</script>
+
+
+        document
+            .getElementById("weekCount")
+            .textContent =
+            weekCount;
+
+
+
+        /* =========================================================
+           TAMPILKAN DURASI
+        ========================================================= */
+
+        const durationElement =
+            document.getElementById(
+                "workDuration"
+            );
+
+
+        /*
+            Selalu tampil:
+            Bulan • Minggu • Hari
+        */
+
+        durationElement.innerHTML = `
+
+            <span class="duration-prefix">
+                ≈
+            </span>
+
+            <strong>
+                ${workMonths}
+            </strong>
+            bulan
+
+            <span class="duration-dot">
+                <i class="bi bi-circle-fill"></i>
+            </span>
+
+            <strong>
+                ${workWeeks}
+            </strong>
+            minggu
+
+            <span class="duration-dot">
+                <i class="bi bi-circle-fill"></i>
+            </span>
+
+            <strong>
+                ${workRemainingDays}
+            </strong>
+            hari
+
+        `;
+
+
+
+        /* =========================================================
+           FORMAT TANGGAL INDONESIA
+        ========================================================= */
+
+        const dateFormatter =
+            new Intl.DateTimeFormat(
+                "id-ID",
+                {
+                    weekday: "long",
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+
+        const formattedToday =
+            dateFormatter.format(
+                today
+            );
+
+
+
+        /* =========================================================
+           TAMPILKAN TANGGAL HARI INI
+        ========================================================= */
+
+        document
+            .getElementById("today")
+            .innerHTML = `
+
+                <i class="bi bi-clock"></i>
+
+                <span>
+                    Hari ini
+                    &nbsp;•&nbsp;
+
+                    <strong>
+                        ${formattedToday}
+                    </strong>
+                </span>
+
+            `;
+
+
+
+        /* =========================================================
+           STATUS HARI INI
+        ========================================================= */
+
+        const statusElement =
+            document.getElementById(
+                "status"
+            );
+
+
+
+        /* =========================================================
+           BELUM DIMULAI
+        ========================================================= */
+
+        if (
+            today < startDate
+        ) {
+
+            statusElement.innerHTML = `
+
+                <span
+                    class="
+                        status
+                        status-waiting
+                    "
+                >
+
+                    <i
+                        class="
+                            bi
+                            bi-hourglass-split
+                        "
+                    ></i>
+
+                    Pengerjaan Belum Dimulai
+
+                </span>
+
+            `;
+
+        }
+
+
+
+        /* =========================================================
+           HARI MINGGU
+        ========================================================= */
+
+        else if (
+            today.getDay() === 0
+        ) {
+
+            statusElement.innerHTML = `
+
+                <span
+                    class="
+                        status
+                        status-holiday
+                    "
+                >
+
+                    <i
+                        class="
+                            bi
+                            bi-calendar-x-fill
+                        "
+                    ></i>
+
+                    Hari Libur • Minggu
+
+                </span>
+
+            `;
+
+        }
+
+
+
+        /* =========================================================
+           SENIN - SABTU
+        ========================================================= */
+
+        else {
+
+            statusElement.innerHTML = `
+
+                <span
+                    class="
+                        status
+                        status-working
+                    "
+                >
+
+                    <i
+                        class="
+                            bi
+                            bi-check-circle-fill
+                        "
+                    ></i>
+
+                    Hari Pengerjaan
+
+                </span>
+
+            `;
+
+        }
+
+    </script>
 
 </body>
 </html>

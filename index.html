@@ -57,7 +57,7 @@
             justify-content: center;
             align-items: center;
 
-            padding: 18px;
+            padding: 12px;
 
             font-family: "Inter", Arial, sans-serif;
 
@@ -88,7 +88,7 @@
             width: 100%;
             max-width: 620px;
 
-            border-radius: 24px;
+            border-radius: 23px;
 
             overflow: hidden;
 
@@ -109,9 +109,9 @@
         .counter-header {
             position: relative;
 
-            height: 245px;
+            height: 205px;
 
-            padding: 30px 30px 70px;
+            padding: 20px 30px 60px;
 
             text-align: center;
 
@@ -133,10 +133,10 @@
 
             position: absolute;
 
-            width: 260px;
-            height: 260px;
+            width: 250px;
+            height: 250px;
 
-            top: -165px;
+            top: -160px;
             right: -100px;
 
             border-radius: 50%;
@@ -149,10 +149,10 @@
 
             position: absolute;
 
-            width: 180px;
-            height: 180px;
+            width: 170px;
+            height: 170px;
 
-            left: -110px;
+            left: -100px;
             bottom: -100px;
 
             border-radius: 50%;
@@ -166,21 +166,19 @@
         }
 
 
-        /* Icon rumah */
-
         .home-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
 
-            margin: 0 auto 13px;
+            margin: 0 auto 9px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 17px;
+            border-radius: 14px;
 
-            font-size: 25px;
+            font-size: 21px;
 
             background: rgba(255,255,255,.14);
 
@@ -191,12 +189,12 @@
 
 
         .header-label {
-            margin-bottom: 5px;
+            margin-bottom: 4px;
 
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 700;
 
-            letter-spacing: 2.6px;
+            letter-spacing: 2.5px;
 
             text-transform: uppercase;
 
@@ -205,9 +203,9 @@
 
 
         .counter-header h1 {
-            margin-bottom: 7px;
+            margin-bottom: 6px;
 
-            font-size: 27px;
+            font-size: 24px;
             line-height: 1.2;
 
             font-weight: 800;
@@ -223,14 +221,10 @@
 
             gap: 6px;
 
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 500;
 
             color: rgba(255,255,255,.82);
-        }
-
-        .start-date i {
-            font-size: 12px;
         }
 
 
@@ -243,9 +237,9 @@
 
             z-index: 5;
 
-            margin-top: -55px;
+            margin-top: -47px;
 
-            padding: 0 28px 23px;
+            padding: 0 25px 16px;
         }
 
 
@@ -258,20 +252,20 @@
 
             max-width: 500px;
 
-            margin: 0 auto 20px;
+            margin: 0 auto 13px;
 
-            padding: 20px 20px 18px;
+            padding: 14px 20px 13px;
 
             text-align: center;
 
-            border-radius: 21px;
+            border-radius: 19px;
 
             background: #ffffff;
 
             border: 1px solid #e2ebf6;
 
             box-shadow:
-                0 15px 35px rgba(22, 75, 132, 0.09);
+                0 14px 30px rgba(22, 75, 132, 0.09);
         }
 
 
@@ -300,14 +294,14 @@
 
 
         .workday-number {
-            margin-bottom: 5px;
+            margin-bottom: 3px;
 
-            font-size: 72px;
+            font-size: 60px;
             line-height: 1;
 
             font-weight: 800;
 
-            letter-spacing: -5px;
+            letter-spacing: -4px;
 
             background:
                 linear-gradient(
@@ -328,17 +322,15 @@
             justify-content: center;
             align-items: center;
 
-            gap: 7px;
+            gap: 6px;
 
-            font-size: 15px;
+            font-size: 13px;
             font-weight: 700;
 
             color: #253a57;
         }
 
         .workday-title i {
-            font-size: 14px;
-
             color: var(--primary);
         }
 
@@ -348,7 +340,7 @@
         ========================================= */
 
         .duration {
-            margin-top: 6px;
+            margin-top: 5px;
 
             display: flex;
             justify-content: center;
@@ -356,9 +348,9 @@
 
             flex-wrap: wrap;
 
-            gap: 4px;
+            gap: 3px;
 
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 500;
 
             color: var(--muted);
@@ -370,14 +362,10 @@
             font-weight: 700;
         }
 
-        .duration-prefix {
-            color: #9ba8b8;
-        }
-
         .duration-dot {
-            margin: 0 3px;
+            margin: 0 2px;
 
-            font-size: 5px;
+            font-size: 4px;
 
             color: #a5bad2;
         }
@@ -392,15 +380,15 @@
 
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 10px;
+            gap: 9px;
         }
 
         .stat-card {
-            padding: 15px 8px;
+            padding: 10px 7px;
 
             text-align: center;
 
-            border-radius: 16px;
+            border-radius: 14px;
 
             background:
                 linear-gradient(
@@ -410,31 +398,20 @@
                 );
 
             border: 1px solid var(--border);
-
-            transition:
-                transform .2s ease,
-                box-shadow .2s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-
-            box-shadow:
-                0 8px 20px rgba(18, 79, 145, 0.07);
         }
 
 
         .stat-icon {
-            width: 34px;
-            height: 34px;
+            width: 29px;
+            height: 29px;
 
-            margin: 0 auto 8px;
+            margin: 0 auto 5px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 10px;
+            border-radius: 9px;
 
             background: #e3f1ff;
 
@@ -442,16 +419,16 @@
         }
 
         .stat-icon i {
-            font-size: 15px;
+            font-size: 13px;
         }
 
 
         .stat-number {
             display: block;
 
-            margin-bottom: 3px;
+            margin-bottom: 2px;
 
-            font-size: 21px;
+            font-size: 18px;
             line-height: 1.1;
 
             font-weight: 800;
@@ -463,8 +440,8 @@
         .stat-label {
             display: block;
 
-            font-size: 9px;
-            line-height: 1.35;
+            font-size: 8px;
+            line-height: 1.3;
 
             font-weight: 500;
 
@@ -473,13 +450,182 @@
 
 
         /* =========================================
+           BIAYA
+        ========================================= */
+
+        .cost-section {
+            margin-top: 11px;
+
+            padding: 11px 13px;
+
+            border-radius: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #075fc4,
+                    #064b9b
+                );
+
+            color: white;
+        }
+
+
+        .cost-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 12px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .cost-title {
+            display: flex;
+            align-items: center;
+
+            gap: 7px;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            color: rgba(255,255,255,.80);
+        }
+
+        .cost-title i {
+            font-size: 14px;
+
+            color: #ffffff;
+        }
+
+
+        .cost-total {
+            text-align: right;
+        }
+
+
+        .cost-total-label {
+            display: block;
+
+            margin-bottom: 1px;
+
+            font-size: 8px;
+            font-weight: 500;
+
+            color: rgba(255,255,255,.63);
+        }
+
+
+        .cost-total-value {
+            font-size: 19px;
+            line-height: 1;
+
+            font-weight: 800;
+
+            letter-spacing: -0.5px;
+        }
+
+
+        /* Breakdown */
+
+        .cost-details {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr
+                auto;
+
+            gap: 7px;
+        }
+
+
+        .cost-detail {
+            padding: 7px 9px;
+
+            border-radius: 9px;
+
+            background: rgba(255,255,255,.10);
+
+            border: 1px solid rgba(255,255,255,.09);
+        }
+
+
+        .cost-detail-title {
+            display: flex;
+            align-items: center;
+
+            gap: 5px;
+
+            margin-bottom: 3px;
+
+            font-size: 8px;
+
+            color: rgba(255,255,255,.65);
+        }
+
+
+        .cost-detail-title i {
+            font-size: 10px;
+        }
+
+
+        .cost-detail-value {
+            display: block;
+
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+
+        .cost-detail-sub {
+            display: block;
+
+            margin-top: 1px;
+
+            font-size: 7px;
+
+            color: rgba(255,255,255,.55);
+        }
+
+
+        /* Daily cost */
+
+        .daily-cost {
+            min-width: 105px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            text-align: right;
+        }
+
+
+        .daily-cost span:first-child {
+            margin-bottom: 2px;
+
+            font-size: 7px;
+
+            color: rgba(255,255,255,.58);
+        }
+
+
+        .daily-cost strong {
+            font-size: 11px;
+        }
+
+
+        /* =========================================
            FOOTER
         ========================================= */
 
         .counter-footer {
-            margin-top: 17px;
+            margin-top: 10px;
 
-            padding-top: 14px;
+            padding-top: 8px;
 
             text-align: center;
 
@@ -488,7 +634,7 @@
 
 
         .today {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
 
             display: flex;
             justify-content: center;
@@ -496,7 +642,7 @@
 
             gap: 5px;
 
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 500;
 
             color: #8190a4;
@@ -504,38 +650,25 @@
 
         .today i {
             color: var(--primary);
-
-            font-size: 11px;
         }
 
         .today strong {
             color: #4b6079;
-
-            font-weight: 700;
         }
 
-
-        /* =========================================
-           STATUS
-        ========================================= */
 
         .status {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
 
             gap: 5px;
 
-            padding: 6px 11px;
+            padding: 5px 9px;
 
             border-radius: 100px;
 
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 700;
-        }
-
-        .status i {
-            font-size: 10px;
         }
 
 
@@ -566,126 +699,18 @@
         }
 
 
-        /* =========================================
-           NOTE
-        ========================================= */
-
         .note {
-            max-width: 430px;
-
-            margin: 10px auto 0;
+            margin-top: 6px;
 
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
 
-            gap: 5px;
+            gap: 4px;
 
-            font-size: 8px;
-            line-height: 1.45;
+            font-size: 7px;
 
             color: #a0acbc;
-        }
-
-        .note i {
-            margin-top: 1px;
-
-            font-size: 9px;
-
-            color: #8ba9cb;
-        }
-
-
-        /* =========================================
-           DESKTOP PENDEK
-           contoh 1366 x 768
-        ========================================= */
-
-        @media (min-width: 651px) and (max-height: 760px) {
-
-            body {
-                padding: 10px;
-            }
-
-            .construction-counter {
-                max-width: 580px;
-            }
-
-            .counter-header {
-                height: 215px;
-
-                padding-top: 20px;
-            }
-
-            .home-icon {
-                width: 48px;
-                height: 48px;
-
-                margin-bottom: 9px;
-
-                font-size: 21px;
-
-                border-radius: 14px;
-            }
-
-            .header-label {
-                font-size: 9px;
-            }
-
-            .counter-header h1 {
-                font-size: 24px;
-            }
-
-            .counter-content {
-                margin-top: -48px;
-
-                padding-bottom: 16px;
-            }
-
-            .main-counter {
-                padding:
-                    15px
-                    18px
-                    14px;
-
-                margin-bottom: 14px;
-            }
-
-            .workday-number {
-                font-size: 62px;
-            }
-
-            .workday-title {
-                font-size: 13px;
-            }
-
-            .stat-card {
-                padding: 11px 7px;
-            }
-
-            .stat-icon {
-                width: 29px;
-                height: 29px;
-
-                margin-bottom: 5px;
-            }
-
-            .stat-icon i {
-                font-size: 13px;
-            }
-
-            .stat-number {
-                font-size: 18px;
-            }
-
-            .counter-footer {
-                margin-top: 12px;
-                padding-top: 10px;
-            }
-
-            .note {
-                margin-top: 7px;
-            }
         }
 
 
@@ -698,129 +723,70 @@
             body {
                 display: block;
 
-                padding: 15px 12px;
+                padding: 12px;
 
                 overflow-y: auto;
             }
 
             .construction-counter {
-                max-width: 100%;
-
                 margin: 0 auto;
-
-                border-radius: 22px;
-            }
-
-            .counter-header {
-                height: 235px;
-
-                padding:
-                    28px
-                    18px
-                    65px;
-            }
-
-            .home-icon {
-                width: 52px;
-                height: 52px;
-
-                border-radius: 15px;
-
-                font-size: 23px;
-            }
-
-            .header-label {
-                font-size: 9px;
-            }
-
-            .counter-header h1 {
-                font-size: 24px;
-            }
-
-            .counter-content {
-                margin-top: -52px;
-
-                padding:
-                    0
-                    14px
-                    20px;
-            }
-
-            .main-counter {
-                padding:
-                    20px
-                    12px
-                    17px;
-
-                margin-bottom: 15px;
-            }
-
-            .workday-number {
-                font-size: 65px;
             }
 
             .statistics {
-                gap: 7px;
+                gap: 6px;
             }
 
-            .stat-card {
-                padding:
-                    14px
-                    4px;
+            .counter-content {
+                padding-left: 13px;
+                padding-right: 13px;
             }
 
-            .stat-number {
-                font-size: 19px;
+            .cost-details {
+                grid-template-columns: 1fr 1fr;
             }
 
-            .stat-label {
-                font-size: 8px;
+            .daily-cost {
+                grid-column: 1 / 3;
+
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                padding-top: 4px;
+
+                text-align: left;
             }
 
-            .note {
-                padding: 0 8px;
+            .daily-cost span:first-child {
+                margin: 0;
             }
         }
 
 
-        /* =========================================
-           MOBILE KECIL
-        ========================================= */
-
         @media (max-width: 380px) {
 
+            .counter-header h1 {
+                font-size: 21px;
+            }
+
             .statistics {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-card {
-                display: grid;
-
-                grid-template-columns:
-                    35px
-                    auto;
-
-                grid-template-rows:
-                    auto
-                    auto;
-
-                align-items: center;
-
-                column-gap: 10px;
-
-                text-align: left;
-
-                padding: 11px 14px;
-            }
-
-            .stat-icon {
-                grid-row: 1 / 3;
-
-                margin: 0;
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .stat-number {
-                margin: 0;
+                font-size: 16px;
+            }
+
+            .stat-label {
+                font-size: 7px;
+            }
+
+            .cost-top {
+                align-items: flex-end;
+            }
+
+            .cost-total-value {
+                font-size: 16px;
             }
         }
 
@@ -880,7 +846,6 @@
                 0
             </div>
 
-
             <div class="workday-title">
 
                 <i class="bi bi-hammer"></i>
@@ -895,25 +860,7 @@
             <div
                 class="duration"
                 id="workDuration"
-            >
-                <span class="duration-prefix">
-                    ≈
-                </span>
-
-                <strong>0</strong> bulan
-
-                <span class="duration-dot">
-                    <i class="bi bi-circle-fill"></i>
-                </span>
-
-                <strong>0</strong> minggu
-
-                <span class="duration-dot">
-                    <i class="bi bi-circle-fill"></i>
-                </span>
-
-                <strong>0</strong> hari
-            </div>
+            ></div>
 
         </div>
 
@@ -921,7 +868,6 @@
 
         <!-- STATISTIK -->
         <div class="statistics">
-
 
             <div class="stat-card">
 
@@ -943,7 +889,6 @@
             </div>
 
 
-
             <div class="stat-card">
 
                 <div class="stat-icon">
@@ -962,7 +907,6 @@
                 </span>
 
             </div>
-
 
 
             <div class="stat-card">
@@ -988,9 +932,111 @@
 
 
 
+        <!-- =====================================
+             BIAYA TENAGA KERJA
+        ====================================== -->
+
+        <div class="cost-section">
+
+            <div class="cost-top">
+
+                <div class="cost-title">
+
+                    <i class="bi bi-wallet2"></i>
+
+                    <span>
+                        Biaya Tenaga Kerja
+                    </span>
+
+                </div>
+
+
+                <div class="cost-total">
+
+                    <span class="cost-total-label">
+                        Total Pengeluaran
+                    </span>
+
+                    <div
+                        class="cost-total-value"
+                        id="totalCost"
+                    >
+                        Rp0
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="cost-details">
+
+
+                <!-- TUKANG -->
+                <div class="cost-detail">
+
+                    <div class="cost-detail-title">
+
+                        <i class="bi bi-person-fill-gear"></i>
+
+                        Tukang
+
+                    </div>
+
+                    <span class="cost-detail-value">
+                        3 Orang
+                    </span>
+
+                    <span class="cost-detail-sub">
+                        Rp130.000 / orang / hari
+                    </span>
+
+                </div>
+
+
+                <!-- LADEN -->
+                <div class="cost-detail">
+
+                    <div class="cost-detail-title">
+
+                        <i class="bi bi-people-fill"></i>
+
+                        Laden
+
+                    </div>
+
+                    <span class="cost-detail-value">
+                        2 Orang
+                    </span>
+
+                    <span class="cost-detail-sub">
+                        Rp120.000 / orang / hari
+                    </span>
+
+                </div>
+
+
+                <!-- PER HARI -->
+                <div class="daily-cost">
+
+                    <span>
+                        Pengeluaran / Hari
+                    </span>
+
+                    <strong id="dailyCost">
+                        Rp630.000
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
         <!-- FOOTER -->
         <div class="counter-footer">
-
 
             <div
                 class="today"
@@ -1006,8 +1052,8 @@
                 <i class="bi bi-info-circle"></i>
 
                 <span>
-                    Hari pengerjaan dihitung Senin–Sabtu.
-                    Minggu merupakan hari libur.
+                    Senin–Sabtu dihitung sebagai hari pengerjaan,
+                    Minggu libur.
                 </span>
 
             </div>
@@ -1024,31 +1070,57 @@
 
     /* =========================================
        TANGGAL MULAI
-       Senin, 13 April 2026
     ========================================= */
 
     const startDate =
         new Date(2026, 3, 13);
-
 
     const today =
         new Date();
 
 
     startDate.setHours(
-        0,
-        0,
-        0,
-        0
+        0, 0, 0, 0
     );
-
 
     today.setHours(
-        0,
-        0,
-        0,
-        0
+        0, 0, 0, 0
     );
+
+
+
+    /* =========================================
+       KONFIGURASI TENAGA KERJA
+    ========================================= */
+
+    const jumlahTukang = 3;
+
+    const upahTukang = 130000;
+
+
+    const jumlahLaden = 2;
+
+    const upahLaden = 120000;
+
+
+
+    /* =========================================
+       BIAYA PER HARI
+    ========================================= */
+
+    const biayaTukangPerHari =
+        jumlahTukang *
+        upahTukang;
+
+
+    const biayaLadenPerHari =
+        jumlahLaden *
+        upahLaden;
+
+
+    const biayaPerHari =
+        biayaTukangPerHari +
+        biayaLadenPerHari;
 
 
 
@@ -1061,7 +1133,6 @@
     let calendarDays = 0;
 
     let sundayCount = 0;
-
 
 
     if (today >= startDate) {
@@ -1079,12 +1150,6 @@
 
             /*
                 0 = Minggu
-                1 = Senin
-                2 = Selasa
-                3 = Rabu
-                4 = Kamis
-                5 = Jumat
-                6 = Sabtu
             */
 
             if (
@@ -1093,7 +1158,9 @@
 
                 sundayCount++;
 
-            } else {
+            }
+
+            else {
 
                 workDays++;
 
@@ -1124,7 +1191,7 @@
 
 
     /* =========================================
-       KONVERSI HARI KERJA
+       DURASI
     ========================================= */
 
     const WORK_DAYS_PER_MONTH = 26;
@@ -1134,7 +1201,6 @@
 
     let remainingDays =
         workDays;
-
 
 
     const workMonths =
@@ -1149,13 +1215,11 @@
         WORK_DAYS_PER_MONTH;
 
 
-
     const workWeeks =
         Math.floor(
             remainingDays /
             WORK_DAYS_PER_WEEK
         );
-
 
 
     const workRemainingDays =
@@ -1165,7 +1229,47 @@
 
 
     /* =========================================
-       UPDATE DATA
+       TOTAL BIAYA
+    ========================================= */
+
+    const totalBiayaTukang =
+        workDays *
+        biayaTukangPerHari;
+
+
+    const totalBiayaLaden =
+        workDays *
+        biayaLadenPerHari;
+
+
+    const totalCost =
+        workDays *
+        biayaPerHari;
+
+
+
+    /* =========================================
+       FORMAT RUPIAH
+    ========================================= */
+
+    function formatRupiah(value) {
+
+        return new Intl.NumberFormat(
+            "id-ID",
+            {
+                style: "currency",
+                currency: "IDR",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }
+        ).format(value);
+
+    }
+
+
+
+    /* =========================================
+       UPDATE COUNTER
     ========================================= */
 
     document
@@ -1194,14 +1298,14 @@
 
 
     /* =========================================
-       DURASI
+       UPDATE DURASI
     ========================================= */
 
     document
         .getElementById("workDuration")
         .innerHTML = `
 
-            <span class="duration-prefix">
+            <span>
                 ≈
             </span>
 
@@ -1233,6 +1337,27 @@
 
 
     /* =========================================
+       UPDATE BIAYA
+    ========================================= */
+
+    document
+        .getElementById("dailyCost")
+        .textContent =
+        formatRupiah(
+            biayaPerHari
+        );
+
+
+    document
+        .getElementById("totalCost")
+        .textContent =
+        formatRupiah(
+            totalCost
+        );
+
+
+
+    /* =========================================
        FORMAT TANGGAL
     ========================================= */
 
@@ -1249,7 +1374,9 @@
 
 
     const formattedToday =
-        dateFormatter.format(today);
+        dateFormatter.format(
+            today
+        );
 
 
 
@@ -1286,9 +1413,6 @@
         );
 
 
-
-    /* BELUM MULAI */
-
     if (
         today < startDate
     ) {
@@ -1313,8 +1437,6 @@
     }
 
 
-    /* MINGGU */
-
     else if (
         today.getDay() === 0
     ) {
@@ -1338,8 +1460,6 @@
 
     }
 
-
-    /* SENIN - SABTU */
 
     else {
 
